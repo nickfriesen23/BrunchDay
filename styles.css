@@ -1,0 +1,208 @@
+:root {
+    --primary-color: #FF9A8B;
+    --secondary-color: #FF6B6B;
+    --accent-color: #4ECDC4;
+    --text-color: #2C3E50;
+    --background-color: #FFF6F3;
+    --recipe-bg: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "mrs-eaves", serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: var(--background-color);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: "Sofia", cursive;
+    margin-bottom: 1rem;
+}
+
+#welcome-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+#welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+#recipe-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.recipe-photo {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    background: var(--recipe-bg);
+}
+
+.recipe-photo:hover {
+    transform: translateY(-10px);
+}
+
+.recipe-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.recipe-photo:hover img {
+    transform: scale(1.1);
+}
+
+.recipe-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    text-align: center;
+    font-family: "Sofia", cursive;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-photo:hover .recipe-label {
+    background: var(--primary-color);
+    color: white;
+}
+
+.recipe-sections {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.recipe {
+    background: var(--recipe-bg);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.recipe.animate__animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.recipe h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recipe h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.recipe-content ul,
+.recipe-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-content li {
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.recipe-content li:hover {
+    transform: translateX(5px);
+    color: var(--secondary-color);
+}
+
+/* Animation delays for staggered entrance */
+.recipe-photo:nth-child(1) { animation-delay: 0.1s; }
+.recipe-photo:nth-child(2) { animation-delay: 0.2s; }
+.recipe-photo:nth-child(3) { animation-delay: 0.3s; }
+.recipe-photo:nth-child(4) { animation-delay: 0.4s; }
+.recipe-photo:nth-child(5) { animation-delay: 0.5s; }
+.recipe-photo:nth-child(6) { animation-delay: 0.6s; }
+.recipe-photo:nth-child(7) { animation-delay: 0.7s; }
+.recipe-photo:nth-child(8) { animation-delay: 0.8s; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #welcome-section {
+        padding: 2rem 1rem;
+    }
+
+    #welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    #recipe-dashboard {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .recipe-photo img {
+        height: 240px;
+    }
+
+    .recipe {
+        padding: 1.5rem;
+    }
+
+    .recipe h2 {
+        font-size: 1.75rem;
+    }
+
+    .recipe h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Custom Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.recipe-photo {
+    animation: float 6s ease-in-out infinite;
+}
+
+.recipe-photo:hover {
+    animation-play-state: paused;
+}
