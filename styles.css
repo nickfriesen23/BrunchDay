@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: "mrs-eaves", serif;
+    font-family: 'Crimson Text', serif;
     color: var(--text-color);
     line-height: 1.6;
     background: var(--background-color);
@@ -22,7 +22,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: "Sofia", cursive;
+    font-family: 'Sofia', cursive;
     margin-bottom: 1rem;
 }
 
@@ -33,7 +33,7 @@ h1, h2, h3 {
 }
 
 #welcome-section h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
     color: var(--secondary-color);
 }
@@ -41,7 +41,7 @@ h1, h2, h3 {
 .intro {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-color);
 }
 
@@ -85,8 +85,8 @@ h1, h2, h3 {
     background: rgba(255, 255, 255, 0.95);
     padding: 1rem;
     text-align: center;
-    font-family: "Sofia", cursive;
-    font-size: 1.2rem;
+    font-family: 'Sofia', cursive;
+    font-size: 1.4rem;
     transition: background-color 0.3s ease;
 }
 
@@ -117,7 +117,7 @@ h1, h2, h3 {
 
 .recipe h2 {
     color: var(--secondary-color);
-    font-size: 2rem;
+    font-size: 2.5rem;
     border-bottom: 3px solid var(--accent-color);
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
@@ -125,7 +125,7 @@ h1, h2, h3 {
 
 .recipe h3 {
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 1.5rem 0 1rem;
 }
 
@@ -133,6 +133,7 @@ h1, h2, h3 {
 .recipe-content ol {
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .recipe-content li {
@@ -162,11 +163,11 @@ h1, h2, h3 {
     }
 
     #welcome-section h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .intro {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     #recipe-dashboard {
@@ -184,11 +185,16 @@ h1, h2, h3 {
     }
 
     .recipe h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     .recipe h3 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+    }
+
+    .recipe-content ul,
+    .recipe-content ol {
+        font-size: 1.1rem;
     }
 }
 
